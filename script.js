@@ -17,11 +17,10 @@ function getComputerChoice(){
 
 function game (userChoice){
     const computerChoice = getComputerChoice();
-    console.log("user choice =>" + userChoice);
-    console.log("computer choice =>" + computerChoice);
+   
 }
 
-game("c");
+function main (){
 
 rock_div.addEventListener('click', function(){
    game("r");
@@ -34,5 +33,6 @@ paper_div.addEventListener('click', function(){
 scissors_div.addEventListener('click', function(){
     game("s");
 })
+}
 
 main();
