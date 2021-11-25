@@ -21,13 +21,17 @@ function convertToWorld(letter){
 }
 
 function win(userChoice, computerChoice){
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span = computerScore;
-    const smallUserWord = "user".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
     result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} beats ${convertToWorld(computerChoice)}${smallCompWord} . Você ganhou! `;
+    userChoice_div.classList.add('.green-glow');
+    setTimeout(() => userChoice_div.classList.remove('green-glow'), 300);
 }
+
 
 function lose(userChoice, computerChoice){
     computerScore++;
@@ -35,18 +39,19 @@ function lose(userChoice, computerChoice){
     computerScore_span = computerScore;
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} loses to ${convertToWorld(computerChoice)}${smallCompWord} . Você perdeu... `;
-   
+    userChoice_div.classList.add('.red-glow');
+    setTimeout(() => userChoice_div.classList.remove('red-glow'), 300);
 }
 
-function draw(){
-    userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span = computerScore;
+function draw(userChoice, computerChoice){
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
-    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} beats ${convertToWorld(computerChoice)}${smallCompWord} . You win `;  
-   
+    const userChoice_div = document.getElementById(userChoice);
+    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} equals ${convertToWorld(computerChoice)}${smallCompWord} . Empate! `;  
+    userChoice_div.classList.add('.gray-glow');
+    setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
 }
 
 function game(userChoice){
@@ -71,17 +76,9 @@ function game(userChoice){
 }
 
 function main(){
-rock_div.addEventListener('click', function(){
-   game("r");
-})
-
-paper_div.addEventListener('click', function(){
-    game("p");
-})
-
-scissors_div.addEventListener('click', function(){
-    game("s");
-})
+rock_div.addEventListener('click', () =>   game("r"));
+paper_div.addEventListener('click', () =>    game("p"));
+scissors_div.addEventListener('click', ()  =>  game("s"));
 }
 
 main();
