@@ -15,9 +15,9 @@ function getComputerChoice(){
 }
 
 function convertToWorld(letter){
-    if (letter === "r") return "Rock";
-    if (letter === "p") return "Paper";
-    return "Scissors";
+    if (letter === "r") return "Pedra";
+    if (letter === "p") return "Papel";
+    if (letter === "s") return "Tesoura";
 }
 
 function win(userChoice, computerChoice){
@@ -49,7 +49,7 @@ function draw(userChoice, computerChoice){
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
     const userChoice_div = document.getElementById(userChoice);
-    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} equals ${convertToWorld(computerChoice)}${smallCompWord} . Empate! `;  
+    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} igual a ${convertToWorld(computerChoice)}${smallCompWord} . Empate! `;  
     userChoice_div.classList.add('.gray-glow');
     setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
 }
