@@ -24,16 +24,28 @@ function win(userChoice, computerChoice){
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span = computerScore;
-result_p.innerHTML = convertToWorld(userChoice) + " beats " + convertToWorld(computerChoice) + ". You win "
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} beats ${convertToWorld(computerChoice)}${smallCompWord} . Você ganhou! `;
 }
 
-function lose(){
-    
+function lose(userChoice, computerChoice){
+    computerScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} loses to ${convertToWorld(computerChoice)}${smallCompWord} . Você perdeu... `;
    
 }
 
 function draw(){
-    
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    computerScore_span = computerScore;
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    result_p.innerHTML = `${convertToWorld(userChoice)}${smallUserWord} beats ${convertToWorld(computerChoice)}${smallCompWord} . You win `;  
    
 }
 
