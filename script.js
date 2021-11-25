@@ -17,7 +17,7 @@ function getComputerChoice(){
 function convertToWorld(letter){
     if (letter === "r") return "Pedra";
     if (letter === "p") return "Papel";
-    if (letter === "s") return "Tesoura";
+    return "Tesoura";
 }
 
 function win(userChoice, computerChoice){
