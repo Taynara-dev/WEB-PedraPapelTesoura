@@ -25,7 +25,7 @@ header > h1 {
     border: 3px solid white;
     border-radius: 4px;
     text-align: center;
-    width: 200px;
+    width: 250px;
     color: white;
     font-size: 46px;
     font-family: Asap, sans-serif;
@@ -43,18 +43,24 @@ header > h1 {
 #user-label {
     position: absolute;
     top: 30px;
-    left: -25px;
+    left: -30px;
 }
 
 #computer-label {
     position: absolute;
     top: 30px;
-    right: -30px;
+    right: -50px;
 }
 
-.result {
+.options {
     font-size: 40px;
     color: white;
+}
+
+.options > p {
+    text-align: center;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
 }
 
 .result > p {
@@ -99,6 +105,9 @@ header > h1 {
     width: 100%;
     margin-top: 50px;
 }
+.players-title {
+    color: #d01115;
+}
 
 .green-glow {
     border: 4px solid #4dcc7d;
@@ -111,8 +120,8 @@ header > h1 {
 }
 
 .gray-glow {
-    border: 4px solid #464647;
-    box-shadow: 0 0 10px #25292b;
+    border: 4px solid rgb(112, 154, 231);
+    box-shadow: 0 0 10px cornflowerblue;
 }
 
 
