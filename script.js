@@ -54,8 +54,8 @@ function empatar(userChoice, computerChoice){
     const userChoice_div = document.getElementById(userChoice);
     options_p.innerHTML = `${smallUserWord}${convertToWord(userChoice)} ${" igual a ".fontcolor('gray').italics()} ${smallCompWord}${convertToWord(computerChoice)} `.fontsize(6);  
     result_p.innerHTML = "Empate! ".fontcolor('cornflowerblue');
-    userChoice_div.classList.add('gray-glow');
-    setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
+    userChoice_div.classList.add('blue-glow');
+    setTimeout(() => userChoice_div.classList.remove('blue-glow'), 300);
 }
 
 function jogo(userChoice){
