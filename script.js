@@ -15,7 +15,7 @@ function getComputerChoice() {
     return choices[randomNumber];
 }
 
-function convertToWorld(letter){
+function convertToWord(letter){
     if (letter === "r") return "Pedra".fontsize(6).fontcolor('lightgray');
     if (letter === "p") return "Papel".fontsize(6).fontcolor('lightgray');
     return "Tesoura".fontsize(6).fontcolor('lightgray');
@@ -28,7 +28,7 @@ function ganhar(userChoice, computerChoice){
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    options_p.innerHTML = `${smallUserWord}${convertToWorld(userChoice)} ${" ganha de ".fontcolor('gray').italics()} ${smallCompWord}${convertToWorld(computerChoice)} `.fontsize(6);
+    options_p.innerHTML = `${smallUserWord}${convertToWord(userChoice)} ${" ganha de ".fontcolor('gray').italics()} ${smallCompWord}${convertToWord(computerChoice)} `.fontsize(6);
     result_p.innerHTML = "Você Venceu! ".fontcolor('greenyellow');
     userChoice_div.classList.add('green-glow');
     setTimeout(() => userChoice_div.classList.remove('green-glow'), 300);
@@ -42,7 +42,7 @@ function perder(userChoice, computerChoice){
     const smallUserWord = "Usuario: ";
     const smallCompWord = "Computador: ";
     const userChoice_div = document.getElementById(userChoice);
-    options_p.innerHTML = `${smallUserWord}${convertToWorld(userChoice)} ${" perde de ".fontcolor('gray').italics()} ${smallCompWord}${convertToWorld(computerChoice)} `.fontsize(6);
+    options_p.innerHTML = `${smallUserWord}${convertToWord(userChoice)} ${" perde de ".fontcolor('gray').italics()} ${smallCompWord}${convertToWord(computerChoice)} `.fontsize(6);
     result_p.innerHTML = "Você perdeu!".fontcolor('tomato');
     userChoice_div.classList.add('red-glow');
     setTimeout(() => userChoice_div.classList.remove('red-glow'), 300);
@@ -52,7 +52,7 @@ function empatar(userChoice, computerChoice){
     const smallUserWord = "Usuario: ";
     const smallCompWord = "Computador: ";
     const userChoice_div = document.getElementById(userChoice);
-    options_p.innerHTML = `${smallUserWord}${convertToWorld(userChoice)} ${" igual a ".fontcolor('gray').italics()} ${smallCompWord}${convertToWorld(computerChoice)} `.fontsize(6);  
+    options_p.innerHTML = `${smallUserWord}${convertToWord(userChoice)} ${" igual a ".fontcolor('gray').italics()} ${smallCompWord}${convertToWord(computerChoice)} `.fontsize(6);  
     result_p.innerHTML = "Empate! ".fontcolor('cornflowerblue');
     userChoice_div.classList.add('gray-glow');
     setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
